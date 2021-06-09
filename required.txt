@@ -1,0 +1,6 @@
+LINUX
+* install tools 
+2. nmap
+3. nsloopup
+4. whois
+5. tracetoute

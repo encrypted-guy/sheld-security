@@ -1,0 +1,104 @@
+{% load static %}
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top">
+            <!-- <a href="#" class="navbar-brand">
+                Race
+            </a> -->
+            <a href="{% url 'home' %}" class="navbar-brand">
+                <img src="{% static 'img/sheld_logo.png' %}" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item "><a href="{% url 'home' %}" 
+                        {% if '/' == request.path %}
+                            class="nav-link active" 
+                        {% else %} 
+                            class="nav-link" 
+                        {% endif %}>Home</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a 
+                            {% if 'tools' in request.path %}
+                                class="nav-link dropdown-toggle active"
+                            {% else %} 
+                                class="nav-link dropdown-toggle" 
+                            {% endif %} 
+                        href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Tools</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'portscan' %}">Port Scanner</a>
+                            <a class="dropdown-item" href="{% url 'intercept' %}">Intercept</a>
+                            <a class="dropdown-item" href="{% url 'nslookup' %}">Nslookup</a>
+                            <a class="dropdown-item" href="{% url 'traceroute' %}">Traceroute</a>
+                            <a class="dropdown-item" href="{% url 'whois' %}">Whois</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"><a href="{% url 'services' %}" 
+                        {% if 'services' in request.path %}
+                            class="nav-link active" 
+                        {% else %} 
+                            class="nav-link" 
+                        {% endif %} 
+                    >Services</a></li>
+
+                    <li class="nav-item"><a href="{% url 'about' %}"
+                        {% if 'about' in request.path %}
+                            class="nav-link active" 
+                        {% else %} 
+                            class="nav-link" 
+                        {% endif %} 
+                        >About</a></li>
+                    <li class="nav-item"><a href="{% url 'contact' %}"
+                        {% if 'contact' in request.path %}
+                            class="nav-link active" 
+                        {% else %} 
+                            class="nav-link" 
+                        {% endif %} 
+                    >Contact</a></li>
+
+                    <!-- login and if not login -->
+                    {% if user.is_authenticated %}
+                        <li class="nav-item "><a href="#" data-toggle="modal" data-target="#UserModel" class="nav-link  float-left">
+                            <img src="{% static 'img/avatar.jpg' %}" alt="Avatar" class="avatar "> <span
+                                class="profile"> Profile</span>
+                        </a></li>
+                    {% else %}
+                        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link btn my-2 my-sm-0 navbar-btn">Login</a></li>
+                    {% endif %}
+                 
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="modal fade" id="UserModel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="user-modal-header">
+                    <div></div>
+                    <h5 class="modal-title user-model" > <span class="red-color" >COME BACK SOON</span> </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="user-modal-body">
+                    <div>
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="btn btn-dark logout-btn">LOGOUT</a>
+                        <form action="{% url 'logout' %}" id="logout" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+                    </div>
+                    <br>
+                    <small> <span class="red-color">update comming soon.</span> </small>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+
+<!-- ALARTS -->
+{% include 'partials/alerts.html' %}

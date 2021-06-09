@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!--==================================================================-->
+
+    <section class="Home">
+        <div class="home-main">
+            <h2> <span class="red-color">Sheld, </span>Easy to Use Scanning tools</h2>
+            <p>
+                Sheld is a FREE network discovery tool that can discover
+                hosts and open ports that are related to a domain.
+            </p>
+         
+            <a href="{% url 'nslookup' %}" class="btn btn-dark">START SCANNING</a>
+        </div>
+    </section>
+
+    <!--==================================================================-->
+
+    <section class="service-models">
+        <div class="container">
+            <div class="row row_icons">
+                <div class="service-item col-sm-2">
+                    <i class="fas fa-shoe-prints fa-3x"></i>
+                    <p>port scanner</p>
+                </div>
+                <div class="service-item col-sm-2">
+                    <i class="fas fa-low-vision fa-3x"></i>
+                    <p>intercept</p>
+                </div>
+                <div class="service-item col-sm-2">
+                    <i class="fas fa-search fa-3x"></i>
+                    <p>nslookup</p>
+                </div>
+                <div class="service-item col-sm-2">
+                    <i class="fas fa-sitemap fa-3x"></i>
+                    <p>traceroute</p>
+                </div>
+                <div class="service-item col-sm-2">
+                    <i class="fas fa-crosshairs fa-3x"></i>
+                    <p>whois</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================================================================-->
+
+    <section class="why-choose">
+        <div class="container">
+            <div class="row">
+                <div class="why-text col-sm-6">
+                    <h4>Why Choose Us</h4>
+                    <p>
+                        Rerum perspiciatis et mollitia facere saepe, placeat dicta amet velit laudantium doloribus
+                        repellendus dolor quas ex in inventore suscipit!
+                        Placeat dicta amet velit laudantium doloribus repellendus dolor quas ex in inventore suscipit!
+                    </p>
+                    <a href="{% url 'contact' %}" class="btn btn-dark">Contact us now</a>
+                </div>
+                <div class="why-image col-sm-6">
+                    <img src="{% static 'img/sheet.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================================================================-->
+
+    <section class="Testimonials">
+        <div class="container Testimonials-main ">
+            <div class="Testimonials-text">
+                <p class="red-color"> - Testimonials -</p>
+                <h3>Happy Customers</h3>
+            </div>
+            <div class="row testimonials-cards">
+
+
+                <div class="card testimonials-each-card col-sm-11 col-md-3">
+                    <div class="card-body">
+                        <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem,
+                            deserunt eveniatum"</p>
+                        <div class="card-info">
+                            <div class="card-info-img">
+                                <img src="{% static 'img/avatar.jpg' %}" alt="">
+                            </div>
+                            <div class="card-info-text">
+                                <!-- <a href="">jenny</a> -->
+                                <p class="black-color">jenny jac</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card testimonials-each-card col-sm-11 col-md-3">
+                    <div class="card-body">
+                        <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem,
+                            deserunt eveniatum"</p>
+                        <div class="card-info">
+                            <div class="card-info-img">
+                                <img src="{% static 'img/avatar.jpg' %}" alt="">
+                            </div>
+                            <div class="card-info-text">
+                                <!-- <a href="">Mike Fisher</a> -->
+                                <p class="black-color">john mac</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card testimonials-each-card col-sm-11 col-md-3">
+                    <div class="card-body">
+                        <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem,
+                            deserunt eveniatum"</p>
+                        <div class="card-info">
+                            <div class="card-info-img">
+                                <img src="{% static 'img/avatar.jpg' %}" alt="">
+                            </div>
+                            <div class="card-info-text">
+                                <!-- <a href="">Mike Fisher</a> -->
+                                <p class="black-color">robot ra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--==================================================================-->
+    <!--==================================================================-->
+
+    <section class="waiting">
+        <div class="container">
+            <div class="waiting-main row">
+                <div class="waiting-text col-sm-12 col-md-9">
+                    <h3>What are you waiting for ?</h3>
+                    <p>Lorem ipsum dolor sit amet, adipisicing elit. Obcaecati, laboriosam.</p>
+                </div>
+                <div class="waiting-btn col-sm-12 col-md-3">
+                    <a href="{% url 'services' %}" class="btn btn-light">view services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

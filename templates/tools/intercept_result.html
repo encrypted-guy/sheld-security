@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section class="result_main container">
+    <div class="result_form">
+        <form action="{% url search_action %}">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control result-input" name="url" value="{{searched_url}}" placeholder="{{searched_url}}">
+                <div class="input-group-append">
+                    <button type="submit" class="btn  red-color-btn" >scan</button>
+                </div>
+            </div> 
+        </form>
+    </div>
+    {% if headers_result%}
+    <div style="padding: 10px;" class="result_text card">
+        <h5> <span class="red-color">Headers</span> </h5>
+        <pre>
+            {% for key, value in headers_result.items %}
+                <span class="red-color"> {{ key }}</span><b>:</b> {{  value}}
+            {% endfor %}
+            
+        </pre>
+    </div>
+    {% endif %}
+
+    {% if request_document %}
+        <div style="padding: 10px;" class="result_text card">
+            <h5> <span class="red-color">Document</span> </h5>
+            <pre>
+                {{request_document}}
+            </pre>
+        </div>
+    {% endif %}
+    <!-- <div class="result_loading">
+        <img src="{% static '/img/Rolling_loading.gif' %}" alt="loading">
+    </div> -->
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ 
+<section class="Home">
+    <div class="home-main">
+        <h2>Join us</h2>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card card_background">
+                        <div class="card-header red-color-background text-white">
+                            <h4>
+                                <i class="fas fa-sign-in-alt"></i> Register</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="{% url 'register' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="username" class="float-left"> <span class="red-color">Username:</span>
+                                    </label>
+                                    <input type="text" name="username" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="float-left"> <span class="red-color">E-mail:</span>
+                                    </label>
+                                    <input type="text" name="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="float-left"><span
+                                            class="red-color">Password:</span></label>
+                                    <input type="password" name="password" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password2" class="float-left"><span class="red-color">Confirm
+                                            Password:</span></label>
+                                    <input type="password" name="password2" class="form-control" required>
+                                </div>
+                                <input type="submit" value="Register" class="btn red-color-btn btn-block">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

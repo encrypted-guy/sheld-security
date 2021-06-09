@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!--==================================================================-->
+
+<section class="Home">
+    <div class="home-main">
+        <h2>Services</h2>
+        <!-- <p><span class="red-color"> Home </span> / Services</p> -->
+        <p>Pentesting Service for Web Applications
+            <br>
+            Our qualified team will make do different types of attacks to check if your website is vulnerable for
+            hackers
+        </p>
+    </div>
+</section>
+
+<!--==================================================================-->
+
+
+<section class="service-models">
+    <div class="container">
+        <div class="row row_icons">
+            <div class="service-item col-sm-2">
+                <i class="fas fa-shoe-prints fa-3x"></i>
+                <p>port scanner</p>
+            </div>
+            <div class="service-item col-sm-2">
+                <i class="fas fa-low-vision fa-3x"></i>
+                <p>intercept</p>
+            </div>
+            <div class="service-item col-sm-2">
+                <i class="fas fa-search fa-3x"></i>
+                <p>nslookup</p>
+            </div>
+            <div class="service-item col-sm-2">
+                <i class="fas fa-sitemap fa-3x"></i>
+                <p>traceroute</p>
+            </div>
+            <div class="service-item col-sm-2">
+                <i class="fas fa-crosshairs fa-3x"></i>
+                <p>whois</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--==================================================================-->
+
+<section class="service">
+    <div class="container">
+        <div class="row">
+            <div class="card service-card col-sm-11 col-md-5">
+                <div class="row no-gutters">
+                    <div class="col-sm-4 icon-service">
+                        <i class="fas fa-syringe  fa-4x"></i>
+                    </div>
+                    <div class="col-sm-8 text-service">
+                        <div class="card-body">
+                            <h5 class="card-title">INJECTION FLAWS</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sed id nisi eius velit
+                                !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card service-card col-sm-11 col-md-5">
+                <div class="row no-gutters">
+                    <div class="col-sm-4 icon-service">
+                        <i class="fas fa-unlock-alt fa-4x"></i>
+                    </div>
+                    <div class="col-sm-8 text-service">
+                        <div class="card-body">
+                            <h5 class="card-title">BROKEN AUTHENTICATION</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sed id nisi eius velit
+                                !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card service-card col-sm-11 col-md-5">
+                <div class="row no-gutters">
+                    <div class="col-sm-4 icon-service">
+                        <i class="fas fa-user-secret fa-4x"></i>
+                    </div>
+                    <div class="col-sm-8 text-service">
+                        <div class="card-body">
+                            <h5 class="card-title">CROSS SITE SCRIPTING (XSS)</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sed id nisi eius velit
+                                !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card service-card col-sm-11 col-md-5">
+                <div class="row no-gutters">
+                    <div class="col-sm-4 icon-service">
+                        <i class="far fa-folder-open fa-4x"></i>
+                    </div>
+                    <div class="col-sm-8 text-service">
+                        <div class="card-body">
+                            <h5 class="card-title">DIRECTORY TRAVERSAL</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sed id nisi eius velit
+                                !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card service-card col-sm-11 col-md-5">
+                <div class="row no-gutters">
+                    <div class="col-sm-4 icon-service">
+                        <i class="fas fa-key fa-4x"></i>
+                    </div>
+                    <div class="col-sm-8 text-service">
+                        <div class="card-body">
+                            <h5 class="card-title">PASSWORD ATTACKS</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sed id nisi eius velit
+                                !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card service-card col-sm-11 col-md-5">
+                <div class="row no-gutters">
+                    <div class="col-sm-4 icon-service">
+                        <i class="fas fa-user-shield fa-4x"></i>
+                    </div>
+                    <div class="col-sm-8 text-service">
+                        <div class="card-body">
+                            <h5 class="card-title">SECURITY MISCONFIGURATION</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sed id nisi eius velit
+                                !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!--==================================================================-->
+
+<section class="waiting">
+    <div class="container">
+        <div class="waiting-main row">
+            <div class="waiting-text col-sm-12 col-md-9">
+                <h3>What are you waiting for ?</h3>
+                <p>Lorem ipsum dolor sit amet, adipisicing elit. Obcaecati, laboriosam.</p>
+            </div>
+            <div class="waiting-btn col-sm-12 col-md-3">
+                {% if user.is_authenticated %}
+                    <button class="btn btn-light" data-toggle="modal" data-target="#inquiryModal">Make an inquiry</button>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-light">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--==================================================================-->
+<!-- Inquiry Modal -->
+<div class="modal fade" id="inquiryModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% if user.is_authenticated %}
+                    <form action="{% url 'services' %}" method="POST" >
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" value="{{user.username}}" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-form-label">Email:</label>
+                            <input type="email" name="email" value="{{user.email}}" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="col-form-label">Phone:</label>
+                            <input type="text" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="col-form-label">Request:</label>
+                            <textarea name="message" class="form-control"></textarea>
+                        </div>
+                        <hr>
+                        <input type="submit" value="Send" class="btn btn-block btn-secondary">
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--==================================================================-->
+
+
+{% endblock %}

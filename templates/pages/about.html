@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="Home">
+    <div class="home-main">
+        <h2>About us</h2>
+        <p><span class="red-color"> Home </span> / About us</p>
+    </div>
+</section>
+
+<!--==================================================================-->
+
+<section class="why-choose">
+    <div class="container">
+        <div class="row">
+            <div class="why-text col-sm-6">
+                <h4>About us</h4>
+                <p>
+                    <span class="red-color">Sheld</span> is created by nafiu.dev to show his passion for cybersecurity
+                    with great Vision to build an
+                    online platform for penetration testing and cyber security reports to help his clients to keep the
+                    companies secure and updated
+                </p>
+            </div>
+            <div class="why-image col-sm-6">
+                <img src="{% static 'img/sheld_logo.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

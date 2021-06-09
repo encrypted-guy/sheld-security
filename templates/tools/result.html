@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="result_main container">
+    <div class="result_form">
+        <form action="{% url search_action %}">
+            <div class="input-group mb-3">
+                <input type="text" name="url" value="{{searched_url}}" class="form-control result-input" placeholder="{{ searched_url }}">
+                <div class="input-group-append">
+                    <button type="submit" class="btn  red-color-btn" >scan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+ 
+    <!-- {% if not result__of %}
+    <div class="result_loading">
+        <img  src="{% static '/img/Rolling_loading.gif' %}"  alt="loading">
+    </div>
+    {% else %}
+        <div style="padding: 20px;" class="result_text card">
+            <pre>
+                {{result__of}}
+            </pre>
+        </div>
+    {% endif %} -->
+    
+    {% if  result__of %}
+        <div style="padding: 20px;" class="result_text card">
+            <pre>
+                {{result__of}}
+            </pre>
+        </div>
+    {% endif %}
+</section>
+
+{% endblock %}

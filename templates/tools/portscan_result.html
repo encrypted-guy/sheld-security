@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ 
+
+<section class="result_main container">
+    <div class="result_form">
+        <form action="{% url search_action %}">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control result-input" value="{{searched_url}}" name="url" placeholder="{{searched_url}}">
+                <div class="input-group-append">
+                    <button type="submit" class="btn  red-color-btn" >scan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="result_text card">
+            <div class="port_scan border-bottom">
+                <div class="port__number  border-right">
+                    <span class="red-color"> <b>port</b> </span>
+                </div>
+                <div class="port_result ">
+                    <span class="red-color"> <b>details</b> </span>
+                </div>
+            </div>   
+            
+
+
+            {% if nmap_results %}
+                {% for key, values in nmap_results.items %}
+                <div class="port_scan border-bottom">
+                    <div class="port__number  border-right">
+                        {{key}}
+                    </div>
+                    <div class="port_result">
+                        <!-- secound loop -->
+                        {% for k,v in values.items %}
+                            <div class="port_result_each  border-bottom">
+                                <b> <span class="red-color"> {{k}} : </span> </b> {{v}}
+                            </div>
+                        {% endfor %}
+                        <!-- end secound loop -->
+                        <!-- <div class="port_result_each">
+                            <span class="red-color-link">
+                                <a href="">google search this port number?</a>
+                            </span> 
+                        </div> -->
+                    </div>
+                </div>  
+                {% endfor %}
+            {% endif %}
+
+
+          
+    </div>
+    <!-- <div class="result_loading">
+        <img src="{% static '/img/Rolling_loading.gif' %}" alt="loading">
+    </div> -->
+</section>
+
+<!--==================================================================-->
+
+
+{% endblock %}
