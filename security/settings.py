@@ -142,7 +142,7 @@ MESSAGE_TAGS = {
 # EMAIL CONFIG
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER='publishfirsttest@gmail.com'
+EMAIL_HOST_USER='emailhere'
 EMAIL_HOST_PASSWORD='passwordhere'
 EMAIL_USE_TLS=True
 
